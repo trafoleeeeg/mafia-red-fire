@@ -8,55 +8,61 @@ const steps = [
   },
   {
     number: "02",
-    title: "Анализ ниши",
+    title: "Анализ",
     description: "Изучаем конкурентов, источники трафика, рабочие подходы. Формируем гипотезы.",
   },
   {
     number: "03",
-    title: "Тест гипотез",
+    title: "Тесты",
     description: "2-4 недели на тесты. Находим работающие связки, отсекаем нерабочие.",
   },
   {
     number: "04",
-    title: "Масштабирование",
+    title: "Скейл",
     description: "Увеличиваем бюджеты на прибыльные связки. Постоянная оптимизация.",
   },
   {
     number: "05",
-    title: "Сопровождение",
-    description: "Еженедельные отчёты, оперативная связь, адаптация под изменения рынка.",
+    title: "Саппорт",
+    description: "Еженедельные отчёты, оперативная связь, адаптация под изменения.",
   },
 ];
 
 const Process = () => {
   return (
-    <section id="process" className="py-24 lg:py-32 relative">
-      <div className="container mx-auto px-6 lg:px-12">
+    <section id="process" className="py-24 lg:py-32 relative overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-2xl mb-16"
+          className="text-center mb-16"
         >
-          <div className="flex items-center gap-4 mb-6">
-            <div className="line-accent" />
-            <span className="text-muted-foreground text-sm tracking-[0.2em] uppercase">
-              Этапы запуска
+          <div className="inline-flex items-center gap-3 mb-6">
+            <div className="w-8 h-px bg-gradient-to-r from-transparent to-accent" />
+            <span className="text-accent text-sm tracking-[0.2em] uppercase font-medium">
+              Процесс
             </span>
+            <div className="w-8 h-px bg-gradient-to-l from-transparent to-accent" />
           </div>
-          <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
             Как мы работаем
           </h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Прозрачный процесс от первого контакта до стабильного ROI
+          </p>
         </motion.div>
 
         {/* Steps */}
-        <div className="relative">
-          {/* Connection line */}
-          <div className="hidden lg:block absolute top-16 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="relative max-w-5xl mx-auto">
+          {/* Connection line - Desktop */}
+          <div className="hidden lg:block absolute top-7 left-[calc(10%)] right-[calc(10%)] h-px">
+            <div className="w-full h-full bg-gradient-to-r from-transparent via-border to-transparent" />
+          </div>
           
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-4">
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
@@ -64,16 +70,14 @@ const Process = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative"
+                className="relative text-center lg:text-left"
               >
                 {/* Number */}
-                <div className="w-12 h-12 flex items-center justify-center bg-accent/10 border border-accent/30 mb-6">
-                  <span className="font-display text-lg font-semibold text-accent">
-                    {step.number}
-                  </span>
+                <div className="step-number mx-auto lg:mx-0 mb-5">
+                  {step.number}
                 </div>
                 
-                <h3 className="font-display text-lg font-semibold text-foreground mb-2">
+                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
                   {step.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
