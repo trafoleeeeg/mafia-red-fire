@@ -1,19 +1,25 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
 import { motion } from "framer-motion";
+import Scene3D from "./Scene3D";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
       {/* Background layers */}
       <div className="absolute inset-0 bg-background" />
-      <div className="hero-glow top-[-300px] left-1/2 -translate-x-1/2" />
-      <div className="hero-glow-secondary top-[10%] right-[-200px]" />
-      <div className="hero-glow-secondary bottom-[10%] left-[-200px]" />
-      <div className="absolute inset-0 grid-pattern opacity-50" />
       
-      {/* Top fade */}
-      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background to-transparent z-10" />
+      {/* 3D Scene */}
+      <Scene3D />
+      
+      {/* Glow effects */}
+      <div className="hero-glow top-[-400px] left-1/2 -translate-x-1/2" />
+      <div className="hero-glow-secondary top-[5%] right-[-300px]" />
+      <div className="hero-glow-secondary bottom-[5%] left-[-300px]" />
+      <div className="absolute inset-0 grid-pattern opacity-30" />
+      
+      {/* Top fade for seamless header blend */}
+      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background via-background/80 to-transparent z-10" />
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-32 pb-24">
         <div className="max-w-6xl mx-auto">
@@ -29,7 +35,7 @@ const Hero = () => {
                 className="inline-flex items-center gap-3 mb-8"
               >
                 <div className="tag">
-                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                  <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
                   Принимаем проекты
                 </div>
               </motion.div>
@@ -122,7 +128,7 @@ const Hero = () => {
               className="relative"
             >
               {/* Main stat card */}
-              <div className="glass-card p-8 mb-6">
+              <div className="glass-card p-8 mb-6 animate-glow-pulse">
                 <div className="text-sm text-muted-foreground mb-3 uppercase tracking-wider">
                   Реализованный бюджет
                 </div>
@@ -159,8 +165,8 @@ const Hero = () => {
               </div>
 
               {/* Floating elements */}
-              <div className="absolute -top-8 -right-8 w-24 h-24 bg-accent/5 rounded-full blur-2xl animate-float" />
-              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+              <div className="absolute -top-8 -right-8 w-24 h-24 bg-accent/10 rounded-full blur-2xl animate-float" />
+              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
             </motion.div>
           </div>
         </div>
