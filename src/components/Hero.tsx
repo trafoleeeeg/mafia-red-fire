@@ -24,7 +24,7 @@ const Hero = () => {
           >
             <div className="line-accent" />
             <span className="text-muted-foreground text-sm tracking-[0.2em] uppercase">
-              Performance Marketing Agency
+              Трафик-агентство
             </span>
           </motion.div>
 
@@ -33,13 +33,13 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold leading-[0.95] mb-8"
+            className="font-display text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] mb-8"
           >
-            <span className="text-gradient-subtle">Трафик для</span>
+            <span className="text-foreground">Приводим клиентов</span>
             <br />
-            <span className="text-foreground">амбициозных</span>
+            <span className="text-foreground">в бизнес, где</span>
             <br />
-            <span className="text-accent">проектов</span>
+            <span className="text-accent">реклама — сложно</span>
           </motion.h1>
 
           {/* Description */}
@@ -49,8 +49,9 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground max-w-xl mb-12 leading-relaxed"
           >
-            Комплексный performance-маркетинг для белых и серых ниш. 
-            Масштабируем бизнес через трафик с прогнозируемым ROI.
+            Gambling, крипта, nutra, финансы — ниши, где обычные агентства 
+            отказывают или не справляются. Мы знаем, как получить трафик 
+            и не слить бюджет.
           </motion.p>
 
           {/* CTAs */}
@@ -61,11 +62,11 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-start gap-4"
           >
             <Button variant="premium" size="xl" className="group">
-              Начать проект
+              Обсудить задачу
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="outline" size="xl">
-              Смотреть кейсы
+              Как мы работаем
             </Button>
           </motion.div>
 
@@ -77,12 +78,12 @@ const Hero = () => {
             className="grid grid-cols-3 gap-8 mt-20 pt-12 border-t border-border/50"
           >
             {[
-              { value: "$50M+", label: "Рекламный бюджет под управлением" },
-              { value: "340%", label: "Средний ROI по портфелю" },
-              { value: "6 лет", label: "На рынке performance" },
+              { value: "6 лет", label: "Работаем в сложных нишах" },
+              { value: "40+", label: "Проектов за прошлый год" },
+              { value: "от $5K", label: "Минимальный бюджет на тест" },
             ].map((stat, index) => (
               <div key={index}>
-                <div className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-2">
+                <div className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2">
                   {stat.value}
                 </div>
                 <div className="text-sm text-muted-foreground leading-snug">
