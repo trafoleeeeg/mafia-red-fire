@@ -1,110 +1,173 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Shield, Zap, TrendingUp } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden">
-      {/* Background Effects */}
+      {/* Background layers */}
       <div className="absolute inset-0 bg-background" />
-      <div className="hero-glow top-[-200px] left-1/2 -translate-x-1/2" />
-      <div className="hero-glow top-[20%] right-[-200px] opacity-50" />
-      <div className="absolute inset-0 grid-pattern" />
+      <div className="hero-glow top-[-300px] left-1/2 -translate-x-1/2" />
+      <div className="hero-glow-secondary top-[10%] right-[-200px]" />
+      <div className="hero-glow-secondary bottom-[10%] left-[-200px]" />
+      <div className="absolute inset-0 grid-pattern opacity-50" />
       
-      {/* Top gradient fade */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-background to-transparent z-10" />
+      {/* Top fade */}
+      <div className="absolute top-0 left-0 right-0 h-40 bg-gradient-to-b from-background to-transparent z-10" />
       
-      <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-32 pb-20">
-        <div className="max-w-5xl mx-auto text-center">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-8"
-          >
-            <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-            <span className="text-sm text-accent font-medium">Performance Marketing Agency</span>
-          </motion.div>
-
-          {/* Main Heading */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[0.95] mb-8"
-          >
-            <span className="text-gradient">Трафик в сложных</span>
-            <br />
-            <span className="text-gradient-accent">нишах под ключ</span>
-          </motion.h1>
-
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed"
-          >
-            Gambling, крипто, финансы, nutra. Полный цикл от креативов до масштабирования. 
-            Работаем на результат, не на открутку бюджета.
-          </motion.p>
-
-          {/* CTAs */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
-          >
-            <Button 
-              size="xl" 
-              className="group bg-accent hover:bg-accent/90 text-white rounded-full px-8"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Обсудить проект
-              <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="xl" 
-              className="rounded-full px-8 border-border/50 hover:border-accent/50 hover:bg-accent/5"
-              asChild
-            >
-              <a href="https://t.me/mafia_trafa" target="_blank" rel="noopener noreferrer">
-                Telegram →
-              </a>
-            </Button>
-          </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-3 gap-4 md:gap-8 max-w-3xl mx-auto"
-          >
-            {[
-              { icon: TrendingUp, value: "$500K+", label: "Общий бюджет кейсов" },
-              { icon: Shield, value: "x2.5+", label: "Средний ROI" },
-              { icon: Zap, value: "50+", label: "Проектов запущено" },
-            ].map((stat, index) => (
-              <div key={index} className="stat-card p-5 md:p-6 text-center">
-                <stat.icon className="w-5 h-5 text-accent mx-auto mb-3" />
-                <div className="font-display text-2xl md:text-3xl font-bold text-foreground mb-1">
-                  {stat.value}
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-32 pb-24">
+        <div className="max-w-6xl mx-auto">
+          {/* Two column layout */}
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left - Content */}
+            <div>
+              {/* Status Badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-3 mb-8"
+              >
+                <div className="tag">
+                  <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                  Принимаем проекты
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground">
-                  {stat.label}
+              </motion.div>
+
+              {/* Heading */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] mb-6"
+              >
+                <span className="text-gradient">Приводим трафик</span>
+                <br />
+                <span className="text-gradient">в </span>
+                <span className="text-gradient-accent">сложных нишах</span>
+              </motion.h1>
+
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-lg md:text-xl text-muted-foreground max-w-lg mb-10 leading-relaxed"
+              >
+                Gambling, крипто, финансы, nutra. Полный цикл от креативов 
+                до масштабирования с гарантией результата.
+              </motion.p>
+
+              {/* CTAs */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex flex-wrap items-center gap-4 mb-12"
+              >
+                <Button 
+                  size="xl" 
+                  className="btn-glow bg-accent hover:bg-accent/90 text-white rounded-full px-8 h-14 text-base font-medium"
+                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Обсудить проект
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="xl" 
+                  className="rounded-full px-8 h-14 border-border/50 hover:border-accent/50 hover:bg-accent/5 group"
+                  asChild
+                >
+                  <a href="#cases">
+                    <Play className="w-4 h-4 mr-2 text-accent" />
+                    Смотреть кейсы
+                  </a>
+                </Button>
+              </motion.div>
+
+              {/* Trust badges */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground"
+              >
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                  </svg>
+                  <span>FB & Google Ads</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                  <span>TikTok Ads</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9.78 18.65l.28-4.23 7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3 3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.81c-.19.91-.74 1.13-1.5.71L12.6 16.3l-1.99 1.93c-.23.23-.42.42-.83.42z"/>
+                  </svg>
+                  <span>Telegram</span>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Right - Stats Cards */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative"
+            >
+              {/* Main stat card */}
+              <div className="glass-card p-8 mb-6">
+                <div className="text-sm text-muted-foreground mb-3 uppercase tracking-wider">
+                  Реализованный бюджет
+                </div>
+                <div className="font-display text-6xl md:text-7xl font-bold text-foreground mb-2">
+                  $500K<span className="text-accent">+</span>
+                </div>
+                <div className="text-muted-foreground">
+                  успешно открученного бюджета за 2024
                 </div>
               </div>
-            ))}
-          </motion.div>
+
+              {/* Secondary stats */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="stat-card p-6 relative">
+                  <div className="relative z-10">
+                    <div className="font-display text-4xl font-bold text-foreground mb-1">
+                      x2.5<span className="text-accent">+</span>
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      Средний ROI
+                    </div>
+                  </div>
+                </div>
+                <div className="stat-card p-6 relative">
+                  <div className="relative z-10">
+                    <div className="font-display text-4xl font-bold text-foreground mb-1">
+                      50<span className="text-accent">+</span>
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      Проектов
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Floating elements */}
+              <div className="absolute -top-8 -right-8 w-24 h-24 bg-accent/5 rounded-full blur-2xl animate-float" />
+              <div className="absolute -bottom-8 -left-8 w-32 h-32 bg-purple-500/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+            </motion.div>
+          </div>
         </div>
       </div>
 
-      {/* Bottom gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };

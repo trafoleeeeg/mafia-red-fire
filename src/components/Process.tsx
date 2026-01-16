@@ -9,7 +9,7 @@ const steps = [
   {
     number: "02",
     title: "Анализ",
-    description: "Изучаем конкурентов, источники трафика, рабочие подходы. Формируем гипотезы.",
+    description: "Изучаем конкурентов, источники, рабочие подходы. Формируем гипотезы.",
   },
   {
     number: "03",
@@ -30,7 +30,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="process" className="py-24 lg:py-32 relative overflow-hidden">
+    <section id="process" className="py-28 lg:py-40 relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -38,31 +38,31 @@ const Process = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="max-w-3xl mx-auto text-center mb-20"
         >
           <div className="inline-flex items-center gap-3 mb-6">
-            <div className="w-8 h-px bg-gradient-to-r from-transparent to-accent" />
+            <div className="section-line" />
             <span className="text-accent text-sm tracking-[0.2em] uppercase font-medium">
               Процесс
             </span>
-            <div className="w-8 h-px bg-gradient-to-l from-transparent to-accent" />
+            <div className="section-line rotate-180" />
           </div>
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Как мы работаем
+          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+            Как мы <span className="text-gradient-accent">работаем</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg md:text-xl">
             Прозрачный процесс от первого контакта до стабильного ROI
           </p>
         </motion.div>
 
         {/* Steps */}
-        <div className="relative max-w-5xl mx-auto">
-          {/* Connection line - Desktop */}
-          <div className="hidden lg:block absolute top-7 left-[calc(10%)] right-[calc(10%)] h-px">
-            <div className="w-full h-full bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="relative max-w-6xl mx-auto">
+          {/* Connection line */}
+          <div className="hidden lg:block absolute top-8 left-[10%] right-[10%] h-px">
+            <div className="w-full h-full bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
           </div>
           
-          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-4">
+          <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-6">
             {steps.map((step, index) => (
               <motion.div
                 key={index}
@@ -70,14 +70,12 @@ const Process = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative text-center lg:text-left"
+                className="relative text-center"
               >
-                {/* Number */}
-                <div className="step-number mx-auto lg:mx-0 mb-5">
+                <div className="step-number mx-auto mb-6">
                   {step.number}
                 </div>
-                
-                <h3 className="font-display text-xl font-semibold text-foreground mb-2">
+                <h3 className="font-display text-xl font-semibold text-foreground mb-3">
                   {step.title}
                 </h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">
