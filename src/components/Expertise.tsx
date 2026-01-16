@@ -1,106 +1,107 @@
 import { motion } from "framer-motion";
 
-const expertise = [
-  {
-    category: "Вертикали",
-    items: ["iGaming", "Nutra", "Finance", "E-commerce", "Apps", "Crypto"],
-  },
-  {
-    category: "ГЕО",
-    items: ["Tier-1 (US, UK, CA, AU)", "Europe", "LATAM", "CIS", "Asia", "MENA"],
-  },
-  {
-    category: "Источники",
-    items: ["Meta Ads", "Google Ads", "TikTok Ads", "Native", "Push", "SEO"],
-  },
-  {
-    category: "Технологии",
-    items: ["Keitaro", "Binom", "Voluum", "Custom Solutions", "API Integrations"],
-  },
+const niches = [
+  "iGaming / Gambling",
+  "Криптовалюты",
+  "Nutra / Health",
+  "Финансы / Займы",
+  "Беттинг",
+  "Adult",
+  "E-commerce (серый)",
+  "Инфобизнес",
+];
+
+const sources = [
+  "Facebook / Instagram",
+  "Google Ads",
+  "TikTok",
+  "Telegram Ads",
+  "Native сети",
+  "Push-уведомления",
 ];
 
 const Expertise = () => {
   return (
-    <section id="expertise" className="py-32 relative dot-pattern">
+    <section id="expertise" className="py-24 lg:py-32 relative dot-pattern">
       <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-20"
-        >
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <div className="line-accent" />
-            <span className="text-muted-foreground text-sm tracking-[0.2em] uppercase">
-              Экспертиза
-            </span>
-            <div className="line-accent rotate-180" />
-          </div>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold text-foreground mb-6">
-            Глубокое понимание рынка
-          </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            6 лет опыта в performance-маркетинге. Знаем специфику каждой ниши и умеем находить прибыльные связки.
-          </p>
-        </motion.div>
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+          {/* Left - About */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex items-center gap-4 mb-6">
+              <div className="line-accent" />
+              <span className="text-muted-foreground text-sm tracking-[0.2em] uppercase">
+                О нас
+              </span>
+            </div>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-6">
+              Не просто агентство — партнёр, который понимает вашу специфику
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                Мы не берём всех подряд. Работаем только с нишами, в которых 
+                разбираемся глубоко: знаем риски, понимаем юнит-экономику, 
+                умеем обходить ограничения площадок.
+              </p>
+              <p>
+                Команда — бывшие арбитражники и маркетологи из крупных 
+                gambling и fintech проектов. Говорим на одном языке 
+                с вашим бизнесом.
+              </p>
+            </div>
+          </motion.div>
 
-        {/* Expertise Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-1">
-          {expertise.map((section, index) => (
+          {/* Right - Lists */}
+          <div className="space-y-12">
             <motion.div
-              key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="premium-card p-8"
+              transition={{ duration: 0.6, delay: 0.1 }}
             >
               <h3 className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-6">
-                {section.category}
+                Ниши, с которыми работаем
               </h3>
-              <ul className="space-y-3">
-                {section.items.map((item, itemIndex) => (
-                  <li
-                    key={itemIndex}
-                    className="flex items-center gap-3 text-foreground"
+              <div className="flex flex-wrap gap-2">
+                {niches.map((niche, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-2 text-sm text-foreground border border-border bg-secondary/30 hover:border-accent/30 transition-colors"
                   >
-                    <div className="w-1 h-1 bg-accent rounded-full" />
-                    <span className="text-sm">{item}</span>
-                  </li>
+                    {niche}
+                  </span>
                 ))}
-              </ul>
+              </div>
             </motion.div>
-          ))}
-        </div>
 
-        {/* Bottom Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-border/50"
-        >
-          {[
-            { value: "200+", label: "Успешных проектов" },
-            { value: "15+", label: "Экспертов в команде" },
-            { value: "$127M", label: "Профита для клиентов" },
-            { value: "24/7", label: "Мониторинг кампаний" },
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="font-display text-4xl font-semibold text-foreground mb-2">
-                {stat.value}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <h3 className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-6">
+                Источники трафика
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {sources.map((source, index) => (
+                  <span
+                    key={index}
+                    className="px-4 py-2 text-sm text-foreground border border-border bg-secondary/30 hover:border-accent/30 transition-colors"
+                  >
+                    {source}
+                  </span>
+                ))}
               </div>
-              <div className="text-sm text-muted-foreground">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

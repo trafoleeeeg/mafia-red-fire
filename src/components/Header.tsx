@@ -16,31 +16,31 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { label: "Услуги", href: "#services" },
-    { label: "Экспертиза", href: "#expertise" },
-    { label: "Результаты", href: "#results" },
+    { label: "Что решаем", href: "#services" },
+    { label: "О нас", href: "#expertise" },
+    { label: "Как работаем", href: "#results" },
     { label: "Контакты", href: "#contact" },
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-background/80 backdrop-blur-xl border-b border-border' : ''}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-background/90 backdrop-blur-xl border-b border-border' : ''}`}>
       <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex items-center justify-between h-20 lg:h-24">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
             <div className="w-2 h-2 bg-accent rounded-full" />
-            <span className="font-display text-xl lg:text-2xl font-semibold text-foreground tracking-tight">
+            <span className="font-display text-lg lg:text-xl font-semibold text-foreground tracking-tight">
               MAFIA TRAFA
             </span>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-12">
+          <nav className="hidden lg:flex items-center gap-10">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-sm tracking-wide"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-sm"
               >
                 {item.label}
               </a>
@@ -49,8 +49,8 @@ const Header = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button variant="premium" size="lg">
-              Обсудить проект
+            <Button variant="premium" size="default">
+              Обсудить задачу
             </Button>
           </div>
 
@@ -77,15 +77,15 @@ const Header = () => {
                   <a
                     key={item.label}
                     href={item.href}
-                    className="text-muted-foreground hover:text-foreground transition-colors duration-300 py-4 text-lg"
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-300 py-3 text-lg"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
                   </a>
                 ))}
-                <div className="pt-6">
+                <div className="pt-4">
                   <Button variant="premium" size="lg" className="w-full">
-                    Обсудить проект
+                    Обсудить задачу
                   </Button>
                 </div>
               </nav>
