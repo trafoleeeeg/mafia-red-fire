@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Menu, X, Flame } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -16,31 +16,31 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { label: "Кейсы", href: "#cases" },
     { label: "Услуги", href: "#services" },
-    { label: "Преимущества", href: "#advantages" },
-    { label: "Контакты", href: "#contacts" },
+    { label: "Экспертиза", href: "#expertise" },
+    { label: "Результаты", href: "#results" },
+    { label: "Контакты", href: "#contact" },
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-background/95 backdrop-blur-lg border-b border-border' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-background/80 backdrop-blur-xl border-b border-border' : ''}`}>
+      <div className="container mx-auto px-6 lg:px-12">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <Flame className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
-            <span className="font-bold text-2xl md:text-3xl text-gradient tracking-tight">
+          <a href="#" className="flex items-center gap-3">
+            <div className="w-2 h-2 bg-accent rounded-full" />
+            <span className="font-display text-xl lg:text-2xl font-semibold text-foreground tracking-tight">
               MAFIA TRAFA
             </span>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-12">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="text-muted-foreground hover:text-primary transition-colors duration-300 font-semibold uppercase tracking-wider text-sm"
+                className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-sm tracking-wide"
               >
                 {item.label}
               </a>
@@ -48,15 +48,15 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
-            <Button variant="mafia" size="lg">
-              Забрать слот
+          <div className="hidden lg:block">
+            <Button variant="premium" size="lg">
+              Обсудить проект
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground p-2"
+            className="lg:hidden text-foreground p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -70,22 +70,22 @@ const Header = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden overflow-hidden bg-card border-t border-border"
+              className="lg:hidden overflow-hidden border-t border-border"
             >
-              <nav className="flex flex-col py-4">
+              <nav className="flex flex-col py-6">
                 {navItems.map((item) => (
                   <a
                     key={item.label}
                     href={item.href}
-                    className="text-muted-foreground hover:text-primary hover:bg-primary/5 transition-colors duration-300 font-semibold uppercase tracking-wider py-4 px-4"
+                    className="text-muted-foreground hover:text-foreground transition-colors duration-300 py-4 text-lg"
                     onClick={() => setIsMenuOpen(false)}
                   >
                     {item.label}
                   </a>
                 ))}
-                <div className="px-4 pt-4">
-                  <Button variant="mafia" size="lg" className="w-full">
-                    Забрать слот
+                <div className="pt-6">
+                  <Button variant="premium" size="lg" className="w-full">
+                    Обсудить проект
                   </Button>
                 </div>
               </nav>

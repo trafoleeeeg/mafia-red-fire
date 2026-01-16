@@ -1,102 +1,91 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Flame, Skull } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Scene3D from "./Scene3D";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 noise-bg stripes-bg">
-      {/* Aggressive Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/95 to-card" />
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary/10 to-transparent" />
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/15 rounded-full blur-[200px]" />
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-primary/5 blur-[150px]" />
-      <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-primary/5 blur-[150px]" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* 3D Background */}
+      <Scene3D />
+      
+      {/* Gradient Overlays */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/80 z-[1]" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-6xl mx-auto text-center">
-          {/* Urgency Badge */}
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <div className="max-w-4xl">
+          {/* Eyebrow */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-3 px-6 py-3 rounded-none bg-primary/20 border border-primary/50 mb-8"
+            transition={{ duration: 0.6 }}
+            className="flex items-center gap-4 mb-8"
           >
-            <Flame className="w-5 h-5 text-primary animate-pulse" />
-            <span className="text-sm font-bold text-primary uppercase tracking-widest">
-              Лимитированные слоты — осталось 3 места
+            <div className="line-accent" />
+            <span className="text-muted-foreground text-sm tracking-[0.2em] uppercase">
+              Performance Marketing Agency
             </span>
-            <Flame className="w-5 h-5 text-primary animate-pulse" />
           </motion.div>
 
           {/* Main Heading */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
+            className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold leading-[0.95] mb-8"
           >
-            <h1 className="text-7xl md:text-[10rem] lg:text-[12rem] font-bold leading-[0.85] mb-6">
-              <span className="text-gradient text-fire block">MAFIA</span>
-              <span className="text-foreground block -mt-2 md:-mt-6">TRAFA</span>
-            </h1>
-          </motion.div>
+            <span className="text-gradient-subtle">Трафик для</span>
+            <br />
+            <span className="text-foreground">амбициозных</span>
+            <br />
+            <span className="text-accent">проектов</span>
+          </motion.h1>
 
-          {/* Killer Subtitle */}
+          {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-2xl md:text-3xl text-foreground font-bold max-w-3xl mx-auto mb-4"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg md:text-xl text-muted-foreground max-w-xl mb-12 leading-relaxed"
           >
-            Трафик, который <span className="text-gradient">УБИВАЕТ КОНКУРЕНТОВ</span>
-          </motion.p>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12"
-          >
-            Гарантируем ROI 300%+ или возвращаем деньги. Только эксклюзивные офферы и прямые контракты.
+            Комплексный performance-маркетинг для белых и серых ниш. 
+            Масштабируем бизнес через трафик с прогнозируемым ROI.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* CTAs */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex flex-col sm:flex-row items-start gap-4"
           >
-            <Button variant="hero" size="xl" className="group min-w-[280px]">
-              <Skull className="w-5 h-5" />
-              Забрать свой слот
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Button variant="premium" size="xl" className="group">
+              Начать проект
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="xl" className="min-w-[280px]">
+            <Button variant="outline" size="xl">
               Смотреть кейсы
             </Button>
           </motion.div>
 
-          {/* Trust Stats - More Aggressive */}
+          {/* Stats Row */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="grid grid-cols-3 gap-8 mt-20 pt-12 border-t border-border/50"
           >
             {[
-              { value: "$127M", label: "Заработано партнёрами", highlight: true },
-              { value: "847%", label: "Средний ROI", highlight: false },
-              { value: "24ч", label: "До первого профита", highlight: false },
-              { value: "0%", label: "Фрода", highlight: true },
+              { value: "$50M+", label: "Рекламный бюджет под управлением" },
+              { value: "340%", label: "Средний ROI по портфелю" },
+              { value: "6 лет", label: "На рынке performance" },
             ].map((stat, index) => (
-              <div
-                key={index}
-                className={`p-6 border ${stat.highlight ? 'border-primary/50 bg-primary/5' : 'border-border bg-card/50'} card-hover`}
-              >
-                <div className={`text-4xl md:text-5xl font-bold mb-2 ${stat.highlight ? 'text-gradient' : 'text-foreground'}`}>
+              <div key={index}>
+                <div className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-2">
                   {stat.value}
                 </div>
-                <div className="text-sm text-muted-foreground uppercase tracking-wider">
+                <div className="text-sm text-muted-foreground leading-snug">
                   {stat.label}
                 </div>
               </div>
@@ -105,8 +94,15 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-card to-transparent" />
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+      >
+        <div className="w-px h-16 bg-gradient-to-b from-transparent via-muted-foreground/50 to-transparent" />
+      </motion.div>
     </section>
   );
 };
