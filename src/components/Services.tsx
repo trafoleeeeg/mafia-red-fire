@@ -1,21 +1,36 @@
 import { motion } from "framer-motion";
+import { Target, Palette, Globe, MessageCircle, TrendingUp, BarChart3 } from "lucide-react";
 
-const problems = [
+const services = [
   {
-    problem: "Реклама блокируется",
-    solution: "Знаем, как проходить модерацию и работать с клоакингом без риска бана",
+    icon: Target,
+    title: "Закупка трафика",
+    description: "Facebook, Instagram, TikTok, Google. Работаем с любыми источниками, знаем как проходить модерацию.",
   },
   {
-    problem: "Агентства отказывают",
-    solution: "Специализируемся на нишах, от которых другие бегут",
+    icon: Palette,
+    title: "Креативы и A/B тесты",
+    description: "Собственная команда дизайнеров. Тестируем гипотезы, находим работающие связки.",
   },
   {
-    problem: "Трафик есть, продаж нет",
-    solution: "Настраиваем аналитику и оптимизируем воронку до конверсии в деньги",
+    icon: Globe,
+    title: "Лендинги и прелендинги",
+    description: "Разрабатываем конвертящие страницы, настраиваем трекеры и аналитику.",
   },
   {
-    problem: "Непонятно, куда уходит бюджет",
-    solution: "Прозрачная отчётность: видите каждый рубль и его отдачу",
+    icon: MessageCircle,
+    title: "Telegram-воронки",
+    description: "Боты, автопрогревы, рассылки. Полная автоматизация работы с лидами.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Масштабирование",
+    description: "Увеличиваем бюджеты без потери эффективности. Стабильный рост без просадок.",
+  },
+  {
+    icon: BarChart3,
+    title: "Отчётность и аналитика",
+    description: "Еженедельные отчёты с прозрачной статистикой. Видите каждый потраченный рубль.",
   },
 ];
 
@@ -34,36 +49,31 @@ const Services = () => {
           <div className="flex items-center gap-4 mb-6">
             <div className="line-accent" />
             <span className="text-muted-foreground text-sm tracking-[0.2em] uppercase">
-              Что решаем
+              Наши услуги
             </span>
           </div>
           <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground">
-            Типичные проблемы владельцев бизнеса в сложных нишах
+            Полный цикл работы с трафиком
           </h2>
         </motion.div>
 
-        {/* Problems Grid */}
-        <div className="grid md:grid-cols-2 gap-1">
-          {problems.map((item, index) => (
+        {/* Services Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-1">
+          {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="premium-card p-8 md:p-10"
+              className="premium-card p-8 md:p-10 group"
             >
-              <div className="text-accent text-sm font-medium uppercase tracking-wider mb-3">
-                Проблема
-              </div>
-              <h3 className="font-display text-xl md:text-2xl font-semibold text-foreground mb-4">
-                {item.problem}
+              <service.icon className="w-8 h-8 text-accent mb-6 group-hover:scale-110 transition-transform" />
+              <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+                {service.title}
               </h3>
-              <div className="text-muted-foreground text-sm uppercase tracking-wider mb-2">
-                Наше решение
-              </div>
-              <p className="text-foreground leading-relaxed">
-                {item.solution}
+              <p className="text-muted-foreground leading-relaxed">
+                {service.description}
               </p>
             </motion.div>
           ))}

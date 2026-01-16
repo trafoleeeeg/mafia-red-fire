@@ -16,11 +16,16 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { label: "Что решаем", href: "#services" },
+    { label: "Услуги", href: "#services" },
+    { label: "Кейсы", href: "#cases" },
+    { label: "Этапы", href: "#process" },
     { label: "О нас", href: "#expertise" },
-    { label: "Как работаем", href: "#results" },
-    { label: "Контакты", href: "#contact" },
   ];
+
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-background/90 backdrop-blur-xl border-b border-border' : ''}`}>
@@ -47,10 +52,15 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:block">
-            <Button variant="premium" size="default">
-              Обсудить задачу
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center gap-4">
+            <Button variant="outline" size="default" asChild>
+              <a href="https://t.me/mafia_trafa" target="_blank" rel="noopener noreferrer">
+                Telegram
+              </a>
+            </Button>
+            <Button variant="premium" size="default" onClick={scrollToContact}>
+              Оставить заявку
             </Button>
           </div>
 
@@ -83,9 +93,14 @@ const Header = () => {
                     {item.label}
                   </a>
                 ))}
-                <div className="pt-4">
-                  <Button variant="premium" size="lg" className="w-full">
-                    Обсудить задачу
+                <div className="pt-4 space-y-3">
+                  <Button variant="outline" size="lg" className="w-full" asChild>
+                    <a href="https://t.me/mafia_trafa" target="_blank" rel="noopener noreferrer">
+                      Telegram
+                    </a>
+                  </Button>
+                  <Button variant="premium" size="lg" className="w-full" onClick={scrollToContact}>
+                    Оставить заявку
                   </Button>
                 </div>
               </nav>
