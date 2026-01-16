@@ -1,31 +1,9 @@
 import { motion } from "framer-motion";
 
-const niches = [
-  "iGaming / Gambling",
-  "Криптовалюты",
-  "Nutra / Health",
-  "Финансы / Займы",
-  "Беттинг",
-  "Adult",
-  "E-commerce (серый)",
-  "Инфобизнес",
-];
-
-const sources = [
-  "Facebook / Instagram",
-  "Google Ads",
-  "TikTok",
-  "Telegram Ads",
-  "Native сети",
-  "Push-уведомления",
-];
-
 const Expertise = () => {
   return (
-    <section id="expertise" className="py-24 lg:py-32 relative dot-pattern">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-      
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+    <section id="expertise" className="py-24 lg:py-32 relative">
+      <div className="container mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Left - About */}
           <motion.div
@@ -37,70 +15,67 @@ const Expertise = () => {
             <div className="flex items-center gap-4 mb-6">
               <div className="line-accent" />
               <span className="text-muted-foreground text-sm tracking-[0.2em] uppercase">
-                О нас
+                Об агентстве
               </span>
             </div>
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-foreground mb-6">
-              Не просто агентство — партнёр, который понимает вашу специфику
+              Агентство с сильной экспертизой в серых нишах
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                Мы не берём всех подряд. Работаем только с нишами, в которых 
-                разбираемся глубоко: знаем риски, понимаем юнит-экономику, 
-                умеем обходить ограничения площадок.
+                Мы не просто подрядчики — мы партнёры. Работаем на результат, 
+                а не на открутку бюджета. Если видим, что проект не взлетит — 
+                скажем честно до начала работы.
               </p>
               <p>
-                Команда — бывшие арбитражники и маркетологи из крупных 
-                gambling и fintech проектов. Говорим на одном языке 
-                с вашим бизнесом.
+                Команда: медиабайеры с опытом 3+ лет в gambling и крипто, 
+                креативщики, аналитики. Все прошли через арбитраж — понимаем 
+                специфику изнутри.
               </p>
             </div>
           </motion.div>
 
-          {/* Right - Lists */}
-          <div className="space-y-12">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <h3 className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-6">
-                Ниши, с которыми работаем
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {niches.map((niche, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 text-sm text-foreground border border-border bg-secondary/30 hover:border-accent/30 transition-colors"
-                  >
-                    {niche}
-                  </span>
+          {/* Right - Team structure */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-8"
+          >
+            <div className="premium-card p-6">
+              <div className="text-xs text-muted-foreground uppercase tracking-wider mb-4">
+                Структура команды
+              </div>
+              <div className="space-y-4">
+                {[
+                  { role: "Медиабайеры", count: "4 человека", desc: "FB, Google, TikTok" },
+                  { role: "Креативный отдел", count: "2 человека", desc: "Дизайн, видео" },
+                  { role: "Аналитики", count: "1 человек", desc: "BI, отчётность" },
+                  { role: "Аккаунт-менеджеры", count: "2 человека", desc: "Коммуникация" },
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center justify-between py-3 border-b border-border last:border-0">
+                    <div>
+                      <div className="font-medium text-foreground">{item.role}</div>
+                      <div className="text-sm text-muted-foreground">{item.desc}</div>
+                    </div>
+                    <div className="text-sm text-accent">{item.count}</div>
+                  </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
-              <h3 className="text-xs text-muted-foreground tracking-[0.2em] uppercase mb-6">
-                Источники трафика
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {sources.map((source, index) => (
-                  <span
-                    key={index}
-                    className="px-4 py-2 text-sm text-foreground border border-border bg-secondary/30 hover:border-accent/30 transition-colors"
-                  >
-                    {source}
-                  </span>
-                ))}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="premium-card p-6 text-center">
+                <div className="font-display text-3xl font-semibold text-foreground mb-1">6+</div>
+                <div className="text-sm text-muted-foreground">лет опыта</div>
               </div>
-            </motion.div>
-          </div>
+              <div className="premium-card p-6 text-center">
+                <div className="font-display text-3xl font-semibold text-foreground mb-1">50+</div>
+                <div className="text-sm text-muted-foreground">проектов</div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

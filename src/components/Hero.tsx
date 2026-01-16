@@ -1,11 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { motion } from "framer-motion";
 import Scene3D from "./Scene3D";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* 3D Background */}
       <Scene3D />
       
@@ -15,44 +15,58 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-4xl">
-          {/* Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center gap-4 mb-8"
-          >
-            <div className="line-accent" />
-            <span className="text-muted-foreground text-sm tracking-[0.2em] uppercase">
-              Трафик-агентство
-            </span>
-          </motion.div>
-
           {/* Main Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-4xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] mb-8"
+            transition={{ duration: 0.6 }}
+            className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.1] mb-6"
           >
-            <span className="text-foreground">Приводим клиентов</span>
+            <span className="text-foreground">Приводим целевой трафик</span>
             <br />
-            <span className="text-foreground">в бизнес, где</span>
-            <br />
-            <span className="text-accent">реклама — сложно</span>
+            <span className="text-accent">в серых нишах</span>
           </motion.h1>
 
-          {/* Description */}
-          <motion.p
+          {/* Badges */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex flex-wrap gap-3 mb-8"
+          >
+            <div className="flex items-center gap-2 px-4 py-2 bg-accent/10 border border-accent/20">
+              <Check className="w-4 h-4 text-accent" />
+              <span className="text-sm text-foreground">Гарантия результата</span>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-2 bg-secondary/50 border border-border">
+              <span className="text-sm text-foreground">ROI x2+ в 9 из 10 проектов</span>
+            </div>
+          </motion.div>
+
+          {/* Key Stats */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-xl mb-12 leading-relaxed"
+            className="flex flex-wrap gap-8 mb-10"
           >
-            Gambling, крипта, nutra, финансы — ниши, где обычные агентства 
-            отказывают или не справляются. Мы знаем, как получить трафик 
-            и не слить бюджет.
-          </motion.p>
+            <div>
+              <div className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+                $80K+
+              </div>
+              <div className="text-sm text-muted-foreground">
+                в месяц под управлением
+              </div>
+            </div>
+            <div>
+              <div className="font-display text-3xl md:text-4xl font-semibold text-foreground">
+                от $5K
+              </div>
+              <div className="text-sm text-muted-foreground">
+                минимальный бюджет
+              </div>
+            </div>
+          </motion.div>
 
           {/* CTAs */}
           <motion.div
@@ -62,35 +76,14 @@ const Hero = () => {
             className="flex flex-col sm:flex-row items-start gap-4"
           >
             <Button variant="premium" size="xl" className="group">
-              Обсудить задачу
+              Оставить заявку
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="xl">
-              Как мы работаем
+            <Button variant="outline" size="xl" asChild>
+              <a href="https://t.me/mafia_trafa" target="_blank" rel="noopener noreferrer">
+                Написать в Telegram
+              </a>
             </Button>
-          </motion.div>
-
-          {/* Stats Row */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="grid grid-cols-3 gap-8 mt-20 pt-12 border-t border-border/50"
-          >
-            {[
-              { value: "6 лет", label: "Работаем в сложных нишах" },
-              { value: "40+", label: "Проектов за прошлый год" },
-              { value: "от $5K", label: "Минимальный бюджет на тест" },
-            ].map((stat, index) => (
-              <div key={index}>
-                <div className="font-display text-2xl md:text-3xl font-semibold text-foreground mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground leading-snug">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
           </motion.div>
         </div>
       </div>
