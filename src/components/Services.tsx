@@ -1,71 +1,91 @@
-import { Target, Users, BarChart3, Shield, Zap, Globe } from "lucide-react";
+import { motion } from "framer-motion";
+import { Target, Users, BarChart3, Shield, Zap, Globe, Crown, Rocket } from "lucide-react";
 
 const services = [
   {
+    icon: Crown,
+    title: "VIP офферы",
+    description: "Эксклюзивные офферы с повышенными ставками, недоступные в паблике",
+    highlight: true,
+  },
+  {
     icon: Target,
-    title: "Целевой трафик",
-    description: "Только качественный трафик с высокой конверсией для ваших офферов",
+    title: "Снайперский таргет",
+    description: "Попадаем точно в ЦА — никакого слива бюджета на мусорный трафик",
+    highlight: false,
   },
   {
-    icon: Users,
-    title: "CPA Сети",
-    description: "Работаем с топовыми CPA сетями и прямыми рекламодателями",
-  },
-  {
-    icon: BarChart3,
-    title: "Аналитика",
-    description: "Глубокая аналитика и отчётность по всем кампаниям в реальном времени",
+    icon: Rocket,
+    title: "Быстрый запуск",
+    description: "От заявки до первых лидов — 24 часа. Без бюрократии и ожидания",
+    highlight: true,
   },
   {
     icon: Shield,
-    title: "Антифрод",
-    description: "Собственная система защиты от фрода и некачественного трафика",
+    title: "0% фрода",
+    description: "Собственная антифрод система. Каждый лид — живой и платящий",
+    highlight: false,
   },
   {
-    icon: Zap,
-    title: "Быстрый старт",
-    description: "Запуск кампаний за 24 часа с полной оптимизацией",
+    icon: BarChart3,
+    title: "Real-time аналитика",
+    description: "Личный кабинет с детальной статистикой по каждой кампании",
+    highlight: false,
   },
   {
     icon: Globe,
-    title: "Все ГЕО",
-    description: "Работаем с трафиком из любых стран мира",
+    title: "200+ ГЕО",
+    description: "Работаем по всему миру: от Tier-1 до экзотики",
+    highlight: false,
   },
 ];
 
 const Services = () => {
   return (
     <section id="services" className="py-24 relative">
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 to-background" />
+      <div className="absolute inset-0 bg-card stripes-bg" />
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="font-display text-5xl md:text-7xl text-foreground mb-4">
-            НАШИ <span className="text-gradient">УСЛУГИ</span>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block px-4 py-2 bg-primary/10 border border-primary/30 text-primary text-sm font-bold uppercase tracking-widest mb-6">
+            Что мы даём
+          </span>
+          <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-4">
+            АРСЕНАЛ <span className="text-gradient">ПОБЕДИТЕЛЯ</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Полный спектр услуг для вашего affiliate бизнеса
+            Всё, что нужно для доминирования в арбитраже
           </p>
-        </div>
+        </motion.div>
 
         {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-1">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group p-8 rounded-xl bg-card border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-mafia"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className={`group p-8 bg-background border border-border hover:border-primary/50 transition-all duration-500 ${service.highlight ? 'bg-primary/5 border-primary/30' : ''}`}
             >
-              <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors duration-300">
-                <service.icon className="w-7 h-7 text-primary" />
+              <div className={`w-14 h-14 flex items-center justify-center mb-6 ${service.highlight ? 'bg-blood-gradient shadow-blood' : 'bg-secondary border border-border'}`}>
+                <service.icon className={`w-7 h-7 ${service.highlight ? 'text-white' : 'text-primary'}`} />
               </div>
-              <h3 className="font-display text-2xl text-foreground mb-3">
+              <h3 className="text-2xl font-bold text-foreground mb-3 uppercase">
                 {service.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
                 {service.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
