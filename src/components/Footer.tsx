@@ -1,30 +1,28 @@
-import { Flame } from "lucide-react";
-
 const Footer = () => {
   return (
-    <footer className="py-10 border-t border-border bg-background">
-      <div className="container mx-auto px-4">
+    <footer className="py-12 border-t border-border">
+      <div className="container mx-auto px-6 lg:px-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2">
-            <Flame className="w-6 h-6 text-primary" />
-            <span className="font-bold text-xl text-gradient">
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 bg-accent rounded-full" />
+            <span className="font-display text-lg font-semibold text-foreground">
               MAFIA TRAFA
             </span>
-          </a>
+          </div>
 
           {/* Copyright */}
-          <p className="text-muted-foreground text-sm">
-            © 2024 MAFIA TRAFA. Доминируй или умри.
+          <p className="text-sm text-muted-foreground">
+            © 2024 MAFIA TRAFA. Performance Marketing Agency.
           </p>
 
           {/* Links */}
-          <div className="flex items-center gap-6">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">
+          <div className="flex items-center gap-8">
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
               Telegram
             </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm uppercase tracking-wider">
-              Условия
+            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              Privacy
             </a>
           </div>
         </div>
