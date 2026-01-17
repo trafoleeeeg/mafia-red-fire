@@ -20,7 +20,11 @@ const Index = () => {
       <div className="relative z-10">
         <Header />
         <Hero />
-        <div className="section-divider mx-auto max-w-4xl" />
+        {/* Hero to content transition */}
+        <div className="relative h-32">
+          <div className="absolute inset-x-0 top-0 h-full bg-gradient-to-b from-transparent via-red-950/5 to-transparent" />
+          <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-red-800/30 to-transparent" />
+        </div>
         <Services />
         <div className="section-divider mx-auto max-w-4xl" />
         <Cases />
