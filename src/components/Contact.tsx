@@ -1,8 +1,62 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, Send, MessageCircle } from "lucide-react";
+import { ArrowRight, Send, MessageCircle, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const [telegram, setTelegram] = useState("");
+  const [niche, setNiche] = useState("");
+  const [budget, setBudget] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!telegram.trim() || !niche.trim()) {
+      toast({
+        title: "Ошибка",
+        description: "Заполните обязательные поля",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke("send-telegram", {
+        body: {
+          telegram: telegram.trim(),
+          niche: niche.trim(),
+          budget: budget.trim(),
+        },
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Заявка отправлена!",
+        description: "Мы свяжемся с вами в ближайшее время",
+      });
+
+      setTelegram("");
+      setNiche("");
+      setBudget("");
+    } catch (error: any) {
+      console.error("Error sending form:", error);
+      toast({
+        title: "Ошибка",
+        description: "Не удалось отправить заявку. Попробуйте позже.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-16 lg:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-t from-secondary/40 to-transparent" />
@@ -40,29 +94,64 @@ const Contact = () => {
               viewport={{ once: true }}
               className="lg:col-span-3"
             >
-              <div className="glass-card p-8 lg:p-10">
+              <form onSubmit={handleSubmit} className="glass-card p-8 lg:p-10">
                 <h3 className="font-display text-xl font-semibold text-foreground mb-8">
                   Оставить заявку
                 </h3>
                 <div className="space-y-6">
                   <div>
                     <label className="block text-sm text-muted-foreground mb-2">Telegram *</label>
-                    <input type="text" placeholder="@username" className="form-input" />
+                    <input
+                      type="text"
+                      placeholder="@username"
+                      className="form-input"
+                      value={telegram}
+                      onChange={(e) => setTelegram(e.target.value)}
+                      disabled={isLoading}
+                    />
                   </div>
                   <div>
                     <label className="block text-sm text-muted-foreground mb-2">Ваша ниша *</label>
-                    <input type="text" placeholder="Gambling, крипто, nutra..." className="form-input" />
+                    <input
+                      type="text"
+                      placeholder="Gambling, крипто, nutra..."
+                      className="form-input"
+                      value={niche}
+                      onChange={(e) => setNiche(e.target.value)}
+                      disabled={isLoading}
+                    />
                   </div>
                   <div>
                     <label className="block text-sm text-muted-foreground mb-2">Примерный бюджет</label>
-                    <input type="text" placeholder="от $2K/мес" className="form-input" />
+                    <input
+                      type="text"
+                      placeholder="от $2K/мес"
+                      className="form-input"
+                      value={budget}
+                      onChange={(e) => setBudget(e.target.value)}
+                      disabled={isLoading}
+                    />
                   </div>
-                  <Button size="xl" className="w-full btn-glow bg-accent hover:bg-accent/90 text-white rounded-xl h-14 text-base group">
-                    Отправить заявку
-                    <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <Button
+                    type="submit"
+                    size="xl"
+                    className="w-full btn-glow bg-accent hover:bg-accent/90 text-white rounded-xl h-14 text-base group"
+                    disabled={isLoading}
+                  >
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="w-5 h-5 mr-2 animate-spin" />
+                        Отправка...
+                      </>
+                    ) : (
+                      <>
+                        Отправить заявку
+                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
                   </Button>
                 </div>
-              </div>
+              </form>
             </motion.div>
 
             {/* Telegram */}
