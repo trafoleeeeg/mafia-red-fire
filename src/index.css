@@ -451,4 +451,145 @@
   .animate-glow-pulse {
     animation: glow-pulse 3s ease-in-out infinite;
   }
+
+  /* Animated neon background */
+  @keyframes neon-shift-1 {
+    0%, 100% { 
+      transform: translate(0%, 0%) scale(1);
+      opacity: 0.4;
+    }
+    25% { 
+      transform: translate(10%, 15%) scale(1.1);
+      opacity: 0.6;
+    }
+    50% { 
+      transform: translate(-5%, 10%) scale(0.95);
+      opacity: 0.35;
+    }
+    75% { 
+      transform: translate(-10%, -5%) scale(1.05);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes neon-shift-2 {
+    0%, 100% { 
+      transform: translate(0%, 0%) scale(1);
+      opacity: 0.35;
+    }
+    25% { 
+      transform: translate(-15%, -10%) scale(1.15);
+      opacity: 0.5;
+    }
+    50% { 
+      transform: translate(10%, -5%) scale(0.9);
+      opacity: 0.4;
+    }
+    75% { 
+      transform: translate(5%, 10%) scale(1.1);
+      opacity: 0.55;
+    }
+  }
+
+  @keyframes neon-shift-3 {
+    0%, 100% { 
+      transform: translate(0%, 0%) scale(1);
+      opacity: 0.3;
+    }
+    33% { 
+      transform: translate(-8%, 12%) scale(1.08);
+      opacity: 0.45;
+    }
+    66% { 
+      transform: translate(12%, -8%) scale(0.92);
+      opacity: 0.35;
+    }
+  }
+
+  .neon-bg {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .neon-bg::before,
+  .neon-bg::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+  }
+
+  .neon-bg::before {
+    top: -20%;
+    left: -10%;
+    width: 60%;
+    height: 60%;
+    background: radial-gradient(
+      ellipse at center,
+      hsl(0 65% 25% / 0.5) 0%,
+      hsl(0 60% 20% / 0.3) 40%,
+      transparent 70%
+    );
+    animation: neon-shift-1 15s ease-in-out infinite;
+  }
+
+  .neon-bg::after {
+    bottom: -30%;
+    right: -15%;
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(
+      ellipse at center,
+      hsl(0 70% 22% / 0.45) 0%,
+      hsl(0 55% 18% / 0.25) 45%,
+      transparent 70%
+    );
+    animation: neon-shift-2 18s ease-in-out infinite;
+  }
+
+  .neon-orb-1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(
+      circle at center,
+      hsl(0 60% 28% / 0.35) 0%,
+      hsl(0 50% 20% / 0.15) 50%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    filter: blur(100px);
+    animation: neon-shift-3 20s ease-in-out infinite;
+  }
+
+  .neon-orb-2 {
+    position: absolute;
+    bottom: 10%;
+    left: 20%;
+    width: 40%;
+    height: 45%;
+    background: radial-gradient(
+      circle at center,
+      hsl(0 55% 30% / 0.3) 0%,
+      hsl(0 45% 22% / 0.12) 55%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    filter: blur(90px);
+    animation: neon-shift-1 22s ease-in-out infinite reverse;
+  }
+
+  .neon-shadow {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 100% 50% at 50% 100%, hsl(0 0% 0% / 0.5) 0%, transparent 60%),
+      radial-gradient(ellipse 80% 40% at 50% 0%, hsl(0 0% 0% / 0.4) 0%, transparent 50%);
+    pointer-events: none;
+  }
 }

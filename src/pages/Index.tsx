@@ -9,20 +9,30 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
-      <Header />
-      <Hero />
-      <div className="section-divider mx-auto max-w-4xl" />
-      <Services />
-      <div className="section-divider mx-auto max-w-4xl" />
-      <Cases />
-      <div className="section-divider mx-auto max-w-4xl" />
-      <Process />
-      <div className="section-divider mx-auto max-w-4xl" />
-      <Expertise />
-      <div className="section-divider mx-auto max-w-4xl" />
-      <Contact />
-      <Footer />
+    <div className="min-h-screen bg-background overflow-x-hidden relative">
+      {/* Animated neon background */}
+      <div className="neon-bg">
+        <div className="neon-orb-1" />
+        <div className="neon-orb-2" />
+        <div className="neon-shadow" />
+      </div>
+      
+      {/* Content */}
+      <div className="relative z-10">
+        <Header />
+        <Hero />
+        <div className="section-divider mx-auto max-w-4xl" />
+        <Services />
+        <div className="section-divider mx-auto max-w-4xl" />
+        <Cases />
+        <div className="section-divider mx-auto max-w-4xl" />
+        <Process />
+        <div className="section-divider mx-auto max-w-4xl" />
+        <Expertise />
+        <div className="section-divider mx-auto max-w-4xl" />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 };
