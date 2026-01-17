@@ -364,21 +364,42 @@
     letter-spacing: 0.05em;
   }
 
-  /* Neon section divider */
+  /* Soft section divider with blur transition */
   .section-divider {
     position: relative;
+    height: 80px;
+    background: transparent;
+  }
+  
+  .section-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
     height: 1px;
     background: linear-gradient(90deg, 
       transparent 0%,
-      hsl(0 55% 45% / 0.5) 20%,
-      hsl(0 62% 35% / 0.8) 50%,
-      hsl(0 55% 45% / 0.5) 80%,
+      hsl(0 55% 45% / 0.25) 25%,
+      hsl(0 62% 35% / 0.4) 50%,
+      hsl(0 55% 45% / 0.25) 75%,
       transparent 100%
     );
-    box-shadow: 
-      0 0 10px hsl(0 55% 45% / 0.3),
-      0 0 20px hsl(0 62% 35% / 0.15),
-      0 0 40px hsl(0 62% 35% / 0.1);
+  }
+  
+  .section-divider::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    right: 10%;
+    height: 100%;
+    background: radial-gradient(
+      ellipse 50% 50% at 50% 50%,
+      hsl(0 55% 30% / 0.08) 0%,
+      transparent 70%
+    );
+    filter: blur(20px);
   }
 
   /* Divider with glow */
@@ -582,6 +603,23 @@
     border-radius: 50%;
     filter: blur(90px);
     animation: neon-shift-1 22s ease-in-out infinite reverse;
+  }
+
+  .neon-orb-3 {
+    position: absolute;
+    top: 55%;
+    right: 10%;
+    width: 45%;
+    height: 40%;
+    background: radial-gradient(
+      circle at center,
+      hsl(0 50% 25% / 0.25) 0%,
+      hsl(0 40% 20% / 0.1) 50%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    filter: blur(110px);
+    animation: neon-shift-2 25s ease-in-out infinite reverse;
   }
 
   .neon-shadow {
