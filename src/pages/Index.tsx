@@ -9,11 +9,11 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-foreground relative overflow-hidden">
+    <div className="min-h-screen bg-[#050505] text-foreground relative overflow-hidden">
       {/* Subtle neon glow accents */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-red-900/20 rounded-full blur-[200px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-red-800/15 rounded-full blur-[180px]" />
+        <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-red-950/15 rounded-full blur-[300px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[700px] h-[700px] bg-red-900/10 rounded-full blur-[280px]" />
       </div>
       
       {/* Content */}
