@@ -46,8 +46,8 @@ const Contact = () => {
                 </h3>
                 <div className="space-y-6">
                   <div>
-                    <label className="block text-sm text-muted-foreground mb-2">Telegram или Email *</label>
-                    <input type="text" placeholder="@username или email" className="form-input" />
+                    <label className="block text-sm text-muted-foreground mb-2">Telegram *</label>
+                    <input type="text" placeholder="@username" className="form-input" />
                   </div>
                   <div>
                     <label className="block text-sm text-muted-foreground mb-2">Ваша ниша *</label>
