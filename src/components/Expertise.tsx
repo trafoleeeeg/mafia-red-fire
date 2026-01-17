@@ -10,7 +10,6 @@ const team = [
 const Expertise = () => {
   return (
     <section id="expertise" className="py-16 lg:py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 via-transparent to-secondary/20" />
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Header */}

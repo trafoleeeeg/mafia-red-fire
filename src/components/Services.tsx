@@ -43,9 +43,7 @@ const services = [
 const Services = () => {
   return (
     <section id="services" className="py-16 lg:py-24 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/20 to-transparent" />
-      <div className="absolute inset-0 dot-pattern opacity-30" />
+      <div className="absolute inset-0 dot-pattern opacity-20" />
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}

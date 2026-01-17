@@ -59,8 +59,6 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-16 lg:py-24 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-t from-secondary/40 to-transparent" />
-      <div className="hero-glow bottom-[-300px] left-1/2 -translate-x-1/2 opacity-20" />
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         <div className="max-w-5xl mx-auto">

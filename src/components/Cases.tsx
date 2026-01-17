@@ -109,9 +109,7 @@ const cases = [
 const Cases = () => {
   return (
     <section id="cases" className="py-16 lg:py-24 relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
-      <div className="absolute inset-0 dot-pattern opacity-20" />
+      <div className="absolute inset-0 dot-pattern opacity-15" />
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}
