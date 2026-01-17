@@ -55,7 +55,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <label className="block text-sm text-muted-foreground mb-2">Примерный бюджет</label>
-                    <input type="text" placeholder="от $5K" className="form-input" />
+                    <input type="text" placeholder="от $2K/мес" className="form-input" />
                   </div>
                   <Button size="xl" className="w-full btn-glow bg-accent hover:bg-accent/90 text-white rounded-xl h-14 text-base group">
                     Отправить заявку
