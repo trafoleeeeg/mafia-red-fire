@@ -1,8 +1,6 @@
 import { Send } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="py-12 border-t border-border/50 relative overflow-hidden">
+  return <footer className="py-12 border-t border-border/50 relative overflow-hidden">
       <div className="absolute inset-0 dot-pattern opacity-20" />
       
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
@@ -35,13 +33,8 @@ const Footer = () => {
 
           {/* Social & Contact */}
           <div className="flex items-center gap-4">
-            <a 
-              href="https://t.me/mafiatrafa" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20
-                       text-accent text-sm font-medium hover:bg-accent/20 hover:border-accent/30 transition-all"
-            >
+            <a href="https://t.me/mafiatrafa" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20
+                       text-accent text-sm font-medium hover:bg-accent/20 hover:border-accent/30 transition-all">
               <Send className="w-4 h-4" />
               @mafiatrafa
             </a>
@@ -50,13 +43,9 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-border/30 text-center">
-          <p className="text-sm text-muted-foreground">
-            © 2024 MAFIA TRAFA. Performance Marketing Agency.
-          </p>
+          <p className="text-sm text-muted-foreground">© 2026 MAFIA TRAFA. Performance Marketing Agency.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
