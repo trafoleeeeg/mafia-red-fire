@@ -43,10 +43,13 @@ const Expertise = () => {
             <h3 className="font-display text-2xl font-semibold text-foreground mb-6">
               Почему мы
             </h3>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>Если видим, что проект не взлетит — скажем честно до начала работы.</p>
-              <p>Команда: медиабайеры с опытом 3+ лет в gambling и крипто, креативщики, аналитики.</p>
-              <p>Работаем с бюджетами от $2K/мес. Оптимальный тестовый бюджет — $10-15K.</p>
+            <div className="space-y-3 text-muted-foreground leading-relaxed">
+              <p>• Если видим, что проект не взлетит — скажем честно до начала работы.</p>
+              <p>• Медиабайеры с опытом 5+ лет в gambling и крипто.</p>
+              <p>• Обходим модерацию и баны FB, Google, TikTok.</p>
+              <p>• Запуск рекламной кампании за 48 часов.</p>
+              <p>• Еженедельные отчёты с полной аналитикой.</p>
+              <p>• Работаем с бюджетами от $2K/мес.</p>
             </div>
           </motion.div>
 
