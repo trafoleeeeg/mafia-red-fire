@@ -12,6 +12,13 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
+  // Validate telegram handle format (5-32 chars, alphanumeric + underscore)
+  const isValidTelegramHandle = (handle: string): boolean => {
+    const cleaned = handle.trim().replace(/^@/, '');
+    const telegramRegex = /^[a-zA-Z][a-zA-Z0-9_]{4,31}$/;
+    return telegramRegex.test(cleaned);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -19,6 +26,15 @@ const Contact = () => {
       toast({
         title: "Ошибка",
         description: "Заполните обязательные поля",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!isValidTelegramHandle(telegram)) {
+      toast({
+        title: "Ошибка",
+        description: "Неверный формат Telegram. Юзернейм должен быть 5-32 символа (буквы, цифры, _)",
         variant: "destructive",
       });
       return;
