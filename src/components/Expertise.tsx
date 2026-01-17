@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 const team = [
   { role: "Медиабайеры", count: "4", desc: "FB, Google, TikTok" },
   { role: "Креативный отдел", count: "2", desc: "Дизайн, видео" },
-  { role: "Аналитики", count: "1", desc: "BI, отчётность" },
   { role: "Аккаунт-менеджеры", count: "2", desc: "Коммуникация" },
+  { role: "Аналитики", count: "1", desc: "BI, отчётность" },
 ];
 
 const Expertise = () => {
@@ -39,7 +39,7 @@ const Expertise = () => {
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass-card p-8 lg:p-10"
+            className="glass-card p-8 lg:p-10 border border-accent/10 hover:border-accent/30 transition-colors hover:shadow-[0_0_30px_rgba(127,29,29,0.1)]"
           >
             <h3 className="font-display text-2xl font-semibold text-foreground mb-6">
               Почему мы
@@ -55,19 +55,19 @@ const Expertise = () => {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass-card p-8 lg:p-10"
+            className="glass-card p-8 lg:p-10 border border-accent/10 hover:border-accent/30 transition-colors hover:shadow-[0_0_30px_rgba(127,29,29,0.1)]"
           >
             <h3 className="font-display text-2xl font-semibold text-foreground mb-6">
               Структура команды
             </h3>
             <div className="space-y-4">
               {team.map((item, index) => (
-                <div key={index} className="flex items-center justify-between py-4 border-b border-border/30 last:border-0">
+                <div key={index} className="flex items-center justify-between py-4 border-b border-accent/20 last:border-0 group hover:bg-accent/5 px-4 -mx-4 rounded-lg transition-colors">
                   <div>
                     <div className="font-medium text-foreground">{item.role}</div>
                     <div className="text-sm text-muted-foreground">{item.desc}</div>
                   </div>
-                  <span className="text-3xl font-display font-bold text-accent">{item.count}</span>
+                  <span className="text-3xl font-display font-bold text-accent drop-shadow-[0_0_8px_rgba(127,29,29,0.5)]">{item.count}</span>
                 </div>
               ))}
             </div>
