@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 const team = [
   { role: "Медиабайеры", count: "1", desc: "FB, Google, TikTok" },
-  { role: "Креативный отдел", count: "3", desc: "Дизайн, видео" },
-  { role: "Аккаунт-менеджеры", count: "2", desc: "Коммуникация" },
-  { role: "Аналитики", count: "1", desc: "BI, отчётность" },
+  { role: "Креативный отдел", count: "2", desc: "Дизайн, видео" },
+  { role: "Аккаунт-менеджеры", count: "3", desc: "Коммуникация" },
+  { role: "Аналитики", count: "4", desc: "BI, отчётность" },
 ];
 
 const Expertise = () => {
