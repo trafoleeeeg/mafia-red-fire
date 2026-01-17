@@ -30,7 +30,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <section id="process" className="py-28 lg:py-40 relative overflow-hidden">
+    <section id="process" className="py-16 lg:py-24 relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}
         <motion.div
@@ -38,7 +38,7 @@ const Process = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-center mb-20"
+          className="max-w-3xl mx-auto text-center mb-12"
         >
           <div className="inline-flex items-center gap-3 mb-6">
             <div className="section-line" />

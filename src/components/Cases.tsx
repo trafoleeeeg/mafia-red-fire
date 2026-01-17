@@ -108,7 +108,7 @@ const cases = [
 
 const Cases = () => {
   return (
-    <section id="cases" className="py-28 lg:py-40 relative overflow-hidden">
+    <section id="cases" className="py-16 lg:py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-secondary/30 to-background" />
       <div className="absolute inset-0 dot-pattern opacity-20" />
@@ -120,7 +120,7 @@ const Cases = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-center mb-20"
+          className="max-w-3xl mx-auto text-center mb-12"
         >
           <div className="inline-flex items-center gap-3 mb-6">
             <div className="section-line" />

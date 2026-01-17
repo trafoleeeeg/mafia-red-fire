@@ -364,6 +364,23 @@
     letter-spacing: 0.05em;
   }
 
+  /* Neon section divider */
+  .section-divider {
+    position: relative;
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent 0%,
+      hsl(0 55% 45% / 0.5) 20%,
+      hsl(0 62% 35% / 0.8) 50%,
+      hsl(0 55% 45% / 0.5) 80%,
+      transparent 100%
+    );
+    box-shadow: 
+      0 0 10px hsl(0 55% 45% / 0.3),
+      0 0 20px hsl(0 62% 35% / 0.15),
+      0 0 40px hsl(0 62% 35% / 0.1);
+  }
+
   /* Divider with glow */
   .divider-glow {
     height: 1px;
