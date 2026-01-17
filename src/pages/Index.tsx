@@ -6,17 +6,22 @@ import Process from "@/components/Process";
 import Expertise from "@/components/Expertise";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import bgGradient from "@/assets/bg-gradient.jpg";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden relative">
-      {/* Animated neon background */}
-      <div className="neon-bg">
-        <div className="neon-orb-1" />
-        <div className="neon-orb-2" />
-        <div className="neon-shadow" />
-      </div>
-      <div className="noise-overlay" />
+    <div className="min-h-screen bg-background text-foreground relative overflow-hidden">
+      {/* Static gradient background */}
+      <div 
+        className="fixed inset-0 z-0"
+        style={{
+          backgroundImage: `url(${bgGradient})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      <div className="fixed inset-0 z-0 bg-background/40" />
       
       {/* Content */}
       <div className="relative z-10">
