@@ -14,9 +14,9 @@ const Index = () => {
       <div className="neon-bg">
         <div className="neon-orb-1" />
         <div className="neon-orb-2" />
-        <div className="neon-orb-3" />
         <div className="neon-shadow" />
       </div>
+      <div className="noise-overlay" />
       
       {/* Content */}
       <div className="relative z-10">
