@@ -54,7 +54,7 @@ const Hero = () => {
             }} className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-[0.95] mb-6">
                 <span className="text-gradient">Приводим трафик</span>
                 <br />
-                <span className="text-gradient">в </span>
+                <span className="text-gradient">Gambling, крипто, финансы, nutra и другие. Полный цикл от креативов до масштабирования.</span>
                 <span className="text-gradient-accent">сложных нишах</span>
               </motion.h1>
 
