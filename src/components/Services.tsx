@@ -42,7 +42,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-28 lg:py-40 relative overflow-hidden">
+    <section id="services" className="py-16 lg:py-24 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/20 to-transparent" />
       <div className="absolute inset-0 dot-pattern opacity-30" />
@@ -54,7 +54,7 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto text-center mb-20"
+          className="max-w-3xl mx-auto text-center mb-12"
         >
           <div className="inline-flex items-center gap-3 mb-6">
             <div className="section-line" />

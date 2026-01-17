@@ -12,10 +12,15 @@ const Index = () => {
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Header />
       <Hero />
+      <div className="section-divider mx-auto max-w-4xl" />
       <Services />
+      <div className="section-divider mx-auto max-w-4xl" />
       <Cases />
+      <div className="section-divider mx-auto max-w-4xl" />
       <Process />
+      <div className="section-divider mx-auto max-w-4xl" />
       <Expertise />
+      <div className="section-divider mx-auto max-w-4xl" />
       <Contact />
       <Footer />
     </div>

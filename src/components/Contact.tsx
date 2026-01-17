@@ -4,7 +4,7 @@ import { ArrowRight, Send, MessageCircle } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-28 lg:py-40 relative overflow-hidden">
+    <section id="contact" className="py-16 lg:py-24 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-t from-secondary/40 to-transparent" />
       <div className="hero-glow bottom-[-300px] left-1/2 -translate-x-1/2 opacity-20" />
       
