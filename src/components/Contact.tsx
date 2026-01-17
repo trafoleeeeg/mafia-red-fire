@@ -84,7 +84,7 @@ const Contact = () => {
                   Быстрый ответ, можно сразу обсудить детали и получить консультацию.
                 </p>
                 <a
-                  href="https://t.me/mafia_trafa"
+                  href="https://t.me/mafiatrafa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 w-full py-4 rounded-xl 
@@ -92,7 +92,7 @@ const Contact = () => {
                            hover:bg-accent/10 hover:border-accent/50 transition-all group"
                 >
                   <Send className="w-5 h-5" />
-                  @mafia_trafa
+                  @mafiatrafa
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>

@@ -36,14 +36,14 @@ const Footer = () => {
           {/* Social & Contact */}
           <div className="flex items-center gap-4">
             <a 
-              href="https://t.me/mafia_trafa" 
+              href="https://t.me/mafiatrafa" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20
                        text-accent text-sm font-medium hover:bg-accent/20 hover:border-accent/30 transition-all"
             >
               <Send className="w-4 h-4" />
-              Telegram
+              @mafiatrafa
             </a>
           </div>
         </div>
