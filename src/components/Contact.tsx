@@ -183,21 +183,35 @@ const Contact = () => {
                 <h3 className="font-display text-xl font-semibold text-foreground mb-3">
                   Или в Telegram
                 </h3>
-                <p className="text-muted-foreground mb-8 flex-grow">
+                <p className="text-muted-foreground mb-6">
                   Быстрый ответ, можно сразу обсудить детали и получить консультацию.
                 </p>
-                <a
-                  href="https://t.me/mafiatrafa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-3 w-full py-4 rounded-xl 
-                           border border-accent/30 text-accent font-medium
-                           hover:bg-accent/10 hover:border-accent/50 transition-all group"
-                >
-                  <Send className="w-5 h-5" />
-                  @mafiatrafa
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </a>
+                <div className="space-y-3 mt-auto">
+                  <a
+                    href="https://t.me/mafiatrafa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-3 w-full py-4 rounded-xl 
+                             border border-accent/30 text-accent font-medium
+                             hover:bg-accent/10 hover:border-accent/50 transition-all group"
+                  >
+                    <Send className="w-5 h-5" />
+                    @mafiatrafa
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                  <a
+                    href="https://t.me/mafia_trafa"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-3 w-full py-3 rounded-xl 
+                             border border-border/50 text-muted-foreground text-sm
+                             hover:bg-secondary/50 hover:text-foreground transition-all group"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    Канал с внутрянкой
+                    <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           </div>
