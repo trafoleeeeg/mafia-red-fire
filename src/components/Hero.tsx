@@ -68,7 +68,7 @@ const Hero = () => {
             }} transition={{
               duration: 0.6,
               delay: 0.2
-            }} className="text-lg md:text-xl text-muted-foreground max-w-lg mb-10 leading-relaxed">Gambling, крипто, финансы, nutra. Полный цикл от креативов до масштабирования.</motion.p>
+            }} className="text-lg md:text-xl text-muted-foreground max-w-lg mb-10 leading-relaxed">Gambling, крипто, финансы, nutra и другие. Полный цикл от креативов до масштабирования.</motion.p>
 
               {/* CTAs */}
               <motion.div initial={{
